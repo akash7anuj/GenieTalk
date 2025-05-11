@@ -62,7 +62,8 @@ pip install -r requirements.txt
 
 ## 🧩 Customization  
 You can modify the chatbot's tone or task logic by editing the prompt templates and task modes in the script. You can also:  
-- Change response languages  
+- Change response languages
+- Adjusting the Chatbot’s Tone or Task Logic
 - Add more task types  
 - Customize speech rate or voice properties in `pyttsx3`  
 - Modify UI elements in Streamlit for branding
