@@ -3,6 +3,7 @@
 ## 📄 Description  
 This Streamlit-based chatbot integrates Google’s Gemini model to provide intelligent and interactive responses. Designed with multi-functionality in mind, this script supports voice communication, file input, language translation, and mode-specific task behaviors. Whether you want coding help, emotional support, resume review, or document summarization, this chatbot adapts accordingly to meet your needs.
 
+
 It uses Google’s Gemini (via the `google-generativeai` library) for generating natural language responses. Additional functionalities include voice-to-text and text-to-speech using `SpeechRecognition` and `pyttsx3`, respectively, making this chatbot both interactive and accessible.
 
 ## ✅ Features  
