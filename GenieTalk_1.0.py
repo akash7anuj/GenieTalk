@@ -7,6 +7,7 @@ import os
 import threading
 from PyPDF2 import PdfReader
 from googletrans import Translator
+from datetime import datetime
 
 # Load .env
 load_dotenv()
@@ -196,8 +197,6 @@ if user_input:
         st.error("⚠️ Something went wrong. Please try again.")
         with st.expander("Error details"):
             st.exception(e)
-
-import datetime
 
 if st.button("💾 Download Chat History"):
     chat_text = ""
