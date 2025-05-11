@@ -26,7 +26,7 @@ Before using the chatbot, ensure you have the following installed:
   - `SpeechRecognition`  
   - `pyttsx3`  
   - `PyPDF2`  
-  - `googletrans==4.0.0-rc1`  
+  - `googletrans`  
   - `python-dotenv`  
 
 These can be installed using:
