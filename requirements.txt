@@ -1,0 +1,7 @@
+streamlit
+google-generativeai
+SpeechRecognition
+pyttsx3
+PyPDF2
+googletrans
+python-dotenv
