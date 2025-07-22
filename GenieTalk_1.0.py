@@ -1,13 +1,12 @@
 import streamlit as st
 from dotenv import load_dotenv
 import google.generativeai as genai
-import pyttsx3
+# import pyttsx3
 import speech_recognition as sr
 import os
 import threading
 from PyPDF2 import PdfReader
 from googletrans import Translator
-from datetime import datetime
 
 # Load .env
 load_dotenv()
@@ -18,12 +17,12 @@ translator = Translator()
 
 
 # Setup TTS (Text-to-Speech)
-tts = pyttsx3.init()
-def speak(text):
-    def _speak():
-        tts.say(text)
-        tts.runAndWait()
-    threading.Thread(target=_speak).start()
+# tts = pyttsx3.init()
+# def speak(text):
+#     def _speak():
+#         tts.say(text)
+#         tts.runAndWait()
+#     threading.Thread(target=_speak).start()
 
 # Voice recognition function
 def recognize_voice():
@@ -144,7 +143,7 @@ if task == "Text Summarizer" and file_content:
                     st.warning("⚠️ Translation failed. Showing original.")
 
             st.chat_message("assistant").markdown(reply)
-            speak(reply)
+            # speak(reply)
             st.session_state.chat_history.append(("user", "[Summarize File]"))
             st.session_state.chat_history.append(("assistant", reply))
         except Exception as e:
@@ -172,7 +171,7 @@ if st.button("🎤 Speak Now"):
                         st.warning("⚠️ Translation failed. Showing original.")
 
                 st.chat_message("assistant").markdown(reply)
-                speak(reply)
+                # speak(reply)
                 st.session_state.chat_history.append(("user", voice_input))
                 st.session_state.chat_history.append(("assistant", reply))
             except Exception as e:
@@ -190,13 +189,15 @@ if user_input:
         response = st.session_state.chat_session.send_message(full_prompt)
         reply = response.text
         st.chat_message("assistant").markdown(reply)
-        speak(reply)
+        # speak(reply)
         st.session_state.chat_history.append(("user", user_input))
         st.session_state.chat_history.append(("assistant", reply))
     except Exception as e:
         st.error("⚠️ Something went wrong. Please try again.")
         with st.expander("Error details"):
             st.exception(e)
+
+import datetime
 
 if st.button("💾 Download Chat History"):
     chat_text = ""
@@ -205,4 +206,4 @@ if st.button("💾 Download Chat History"):
     filename = f"chat_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
     st.download_button("⬇️ Save Chat as Text File", data=chat_text, file_name=filename, mime="text/plain")
 
-# streamlit run "C:\Users\Akash\Desktop\chatbot gemini\z.py"
+# streamlit run "C:\Users\Akash\Desktop\git upload folders\GenieTalk\GenieTalk_1.0.py"
